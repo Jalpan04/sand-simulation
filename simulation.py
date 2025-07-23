@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, random
 from grid import Grid
 from particle import *
 
@@ -11,16 +11,15 @@ class Simulation:
 
     def draw(self, window):
         self.grid.draw(window)
+        self.draw_brush(window)
 
     def add_particle(self, row, colum):
         if self.mode == "sand":
-            particle = SandParticle
+            if random.random() < 0.15:
+                self.grid.add_particle(row, colum, SandParticle)
         elif self.mode == "rock":
-            particle = RockParticle
-        else:
-            return
+            self.grid.add_particle(row, colum, RockParticle)
 
-        self.grid.add_particle(row, colum, particle)
 
     def remove_particle(self, row, colum):
         self.grid.remove_particle(row, colum)
@@ -78,3 +77,20 @@ class Simulation:
                     self.grid.remove_particle(current_row, current_colum)
                 else:
                     self.add_particle(current_row, current_colum)
+
+    def draw_brush(self, window):
+        mouse_pos = pygame.mouse.get_pos()
+        row = mouse_pos[1] // self.cell_size
+        colum = mouse_pos[0] // self.cell_size
+
+        brush_visual_size = self.cell_size * self.brush_size
+        color = (255, 255, 255)
+
+        if self.mode == "rock":
+            color = (100, 100, 100)
+        elif self.mode == "sand":
+            color = (185, 142, 66)
+        elif self.mode == "erase":
+            color = (255, 105, 180)
+
+        pygame.draw.rect(window, color, (colum * self.cell_size, row * self.cell_size, brush_visual_size, brush_visual_size))
