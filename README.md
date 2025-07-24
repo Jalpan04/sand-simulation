@@ -109,12 +109,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ---
 
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information. (Note: You will need to add a LICENSE.txt file to your repository).
-
----
-
 ## Acknowledgments
 
 * This project was built using the [Pygame](https://www.pygame.org/) library.
