@@ -1,5 +1,7 @@
 # Particle Simulation Sandbox
 
+![GitHub top language](https://img.shields.io/github/languages/top/Jalpan04/sand-simulation) ![GitHub repo size](https://img.shields.io/github/repo-size/Jalpan04/sand-simulation) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+
 ![Project Demo Placeholder](example.png)
 
 A dynamic 2D particle simulation sandbox built with Python and Pygame. This project models the behavior of various elements and their interactions in a grid-based environment, allowing users to experiment with physics in a digital sandbox.
