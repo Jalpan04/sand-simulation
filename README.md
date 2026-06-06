@@ -114,3 +114,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 * This project was built using the [Pygame](https://www.pygame.org/) library.
 * Inspiration from various "falling sand" games and physics sandboxes.
 
+## License
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
